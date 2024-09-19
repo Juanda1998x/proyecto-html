@@ -1,0 +1,290 @@
+/* Normalizacion */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* mantiene ancho y alto a pesar de pading y border*/
+    font-family: monospace;
+    list-style: none; /* quita las vinetas de las listas */
+    text-decoration: none;/* quita los subrayados de los enlaces */
+    color: white;
+
+}
+
+body{
+
+    background-color: black; /*TODO: BORRAR CUANDO TENGAMOS FONDO FINAL */
+}
+
+header{
+
+    position: fixed;
+    display: flex; /* se acomoden elementos en linea*/
+    padding: 10px 3%;
+    width: 100%;
+    justify-content: space-between; /* separar los elementos*/
+    align-items: center;
+    z-index: 100;/*sirve para que se muestre por encima */
+    background-color: transparent;
+
+}
+
+.logo{
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.navlist {
+
+    display: flex;
+}
+.navlist a{
+    margin-left: 60px;
+    font-weight: 600;
+    font-size: 15px;
+    border-bottom: 2px solid transparent;/* subrayado transparente*/
+    transition: all .5s ease; /* para animar todas las caracteristicas del navlist a*/
+
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+
+
+
+#menuIcon{
+
+    display: none;
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer; /* aparecfe mano con el cursor encima */
+}
+#menuIcon{
+    transition: all .5s ease;
+   }
+#menuIcon:hover{
+    font-size: 37px;
+    background-color: #49414d53;
+}
+
+#menuToogle{
+
+    display: none;  /* ocultamos el cuadro checkbox*/
+}
+.accionCheck{
+    display: none;  /* para que no sea cliqueable el label antes de que colpase la pagina */
+}
+
+.hero{
+
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #3e3a45 0%, #372152 25%, #150932 75%);/* fodo degradado*/
+    position: relative;/* relativo al contenedor */
+    display: grid; /* podemos dividir el hero en dos columnas */
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /*alineamos verticalmente */
+    gap: 2rem;
+
+}
+
+section{
+    padding: 8%;
+
+}
+
+.heroText h5{
+
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+
+.heroText h4{
+
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+.heroText h1{
+
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1;
+    margin: 0 0 30px;
+
+}
+
+.heroText p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+.heroImagen img{
+
+    width: 320px;
+    margin-left: 15%;
+    height: auto;
+    transition: all 3s linear;
+
+}
+
+.heroImagen img:hover{
+
+    width: 360px;
+    opacity: 0.6;
+}
+
+.heroText a{
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #8a848ba4;
+    text-transform: uppercase;
+    line-height: 2;
+    border-radius: 30px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    font-size: 14px;
+    transition: all .5s ease;
+    
+
+}
+
+.heroText a:hover{
+
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+
+}
+.heroText a.video i{
+
+    margin-right: 8px;
+}
+
+.icons{
+
+    font-size: 25px;
+    position: absolute;
+    padding: 3%;
+    top: 50%;
+    transform: translateY(-80px);
+}
+
+.icons i{
+
+    display: block;
+    margin-bottom: 15px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+
+    color: #949096;
+    transform: translateY(-5px);
+}
+
+.scroll{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    transition: all;
+}
+
+.scroll i{
+    display: block;
+    font-size: 25px;
+    padding: 12px;
+    background-color: #8a848b5f;
+    border-radius: 30px;
+    transition: all .5s ease;
+    
+}
+.scroll i:hover{
+
+    transform: translateY(-4px);
+}
+
+/* vamos hacer mediaqueris para que la web sea responsive  */
+
+@media (max-width:992px){
+    .scroll{
+        display: none;
+    }
+
+    section{
+        padding: 0 3%;
+        transition: .5s;
+
+    }
+
+    .heroText{
+        padding-top: 0%;
+    }
+    .heroImagen{
+
+        text-align: center;
+    }
+    .heroImagen img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .icons i{
+       display: none;
+    }
+}
+
+@media(max-width:768px){
+
+
+    .accionCheck{
+        display: block;
+    }
+    #menuIcon{
+        display: block;
+    }
+    .heroText{
+        text-align: center;
+        padding-top: 100px;
+    }
+   .heroImagen img{
+    margin: 0;
+   }
+   .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+
+   }
+   .navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: #150932a8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all .5s ease-in-out;
+   }
+
+   .navlist a{
+        display: block;
+        margin: 7px 0;
+   }
+   #menuToogle:checked + label.accionCheck + ul{
+        right: 0;
+        
+   }
+
+
+}
+
+
