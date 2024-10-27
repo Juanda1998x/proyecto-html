@@ -51,7 +51,9 @@ header{
     border-bottom: 2px solid white;
 }
 
-
+.scroll{
+    display: none;
+}
 
 #menuIcon{
 
@@ -62,18 +64,10 @@ header{
 }
 #menuIcon{
     transition: all .5s ease;
-   }
+}
 #menuIcon:hover{
     font-size: 37px;
     background-color: #49414d53;
-}
-
-#menuToogle{
-
-    display: none;  /* ocultamos el cuadro checkbox*/
-}
-.accionCheck{
-    display: none;  /* para que no sea cliqueable el label antes de que colpase la pagina */
 }
 
 .hero{
@@ -261,6 +255,9 @@ section{
         grid-template-columns: 1fr;
 
    }
+   .scroll{
+    display: block;
+   }
    .navlist{
     position: absolute;
     top: 100%;
@@ -279,11 +276,11 @@ section{
         display: block;
         margin: 7px 0;
    }
-   #menuToogle:checked + label.accionCheck + ul{
-        right: 0;
-        
-   }
 
+   .navlist.open{
+    right: 0;
+   }
+ 
 
 }
 
